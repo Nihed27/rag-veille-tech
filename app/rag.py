@@ -2,7 +2,7 @@ from app.llm import get_llm
 from app.vectorstore import get_vectorstore
 
 PROMPT = """Tu es un assistant qui répond à des questions à partir d'extraits de cours.
-Réponds uniquement à partir des extraits ci-dessous. Si la réponse n'y figure pas, dis-le clairement.
+Réponds uniquement à partir des extraits ci-dessous. Si la réponse n'y figure pas, réponds uniquement « Je ne trouve pas la réponse dans les documents. » sans citer aucune source.
 Cite tes sources à la fin de chaque affirmation, en recopiant exactement le nom du fichier et la page indiqués entre crochets avant l'extrait, par exemple (Chapitre5.pdf, page 3).
 
 Extraits :
