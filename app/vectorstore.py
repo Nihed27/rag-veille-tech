@@ -1,6 +1,6 @@
 from langchain_chroma import Chroma
 
-from app.embeddings import LocalEmbeddings
+from app.embeddings import OpenRouterEmbeddings
 from app.ingest import load_documents, split_documents
 
 CHROMA_DIR = "data/chroma"
@@ -11,7 +11,7 @@ def get_vectorstore() -> Chroma:
     """Ouvre la collection ChromaDB (la crée si elle n'existe pas)."""
     return Chroma(
         collection_name=COLLECTION_NAME,
-        embedding_function=LocalEmbeddings(),
+        embedding_function=OpenRouterEmbeddings(),
         persist_directory=CHROMA_DIR,
     )
 
