@@ -25,13 +25,15 @@ def split_documents(
     documents: list[Document],
     chunk_size: int = 1000,
     chunk_overlap: int = 200,
+    min_length: int = 100,
 ) -> list[Document]:
-    """Découpe les pages en chunks qui gardent leurs métadonnées."""
+    """Découpe les pages en chunks et écarte les chunks trop courts."""
     splitter = RecursiveCharacterTextSplitter(
         chunk_size=chunk_size,
         chunk_overlap=chunk_overlap,
     )
-    return splitter.split_documents(documents)
+    chunks = splitter.split_documents(documents)
+    return [c for c in chunks if len(c.page_content.strip()) >= min_length]
 
 
 if __name__ == "__main__":
