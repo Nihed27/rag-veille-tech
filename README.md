@@ -123,11 +123,6 @@ rag-veille-tech/
 
 ```
 
-## Limites connues / scope
-
-- Corpus fixe, chargé une fois (pas d'upload dynamique de documents)
-- Pas d'authentification
-- Un seul document source pour la démo actuelle (extensible à un corpus plus large)
 
 ## Pistes d'évolution
 
