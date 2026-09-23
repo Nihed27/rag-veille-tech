@@ -2,8 +2,8 @@ from langchain_chroma import Chroma
 
 from app.embeddings import OpenRouterEmbeddings
 from app.ingest import load_documents, split_documents
+from app.config import CHROMA_DIR
 
-CHROMA_DIR = "data/chroma"
 COLLECTION_NAME = "cours_analyse_donnees"
 
 

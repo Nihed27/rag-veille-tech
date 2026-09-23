@@ -2,8 +2,8 @@ from pathlib import Path
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.documents import Document
 from pypdf import PdfReader
+from app.config import DOCS_DIR
 
-DOCS_DIR = Path("data/docs")
 
 
 def load_documents(docs_dir: Path = DOCS_DIR) -> list[Document]:
